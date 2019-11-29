@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Vyper'
+project = 'Vyper-kr'
 copyright = '2017-2019 CC-BY-4.0 Vyper Team'
 author = 'Vyper Team (originally created by Vitalik Buterin)'
 
