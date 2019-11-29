@@ -1,41 +1,39 @@
-Installing Vyper
+Vyper 설치하기
 ################
 
-Don't panic if the installation fails. Vyper is still under development and
-undergoes constant changes. Installation will be much more simplified and
-optimized after a stable version release.
+설치가 실패한다고 해도 놀라지 마세요. Vyper는 아직 개발 중이고 지속적인 변화를 겪고 있습니다.
+설치는 스테이블 버전 이후부터는 최적화 되고 단순화 될 것입니다.
 
-Take a deep breath, follow the instructions, and please
-`create an issue <https://github.com/vyperlang/vyper/issues>`_ if you encounter
-any errors.
+깊은 숨을 한 번 들이쉬고, 다음의 설명을 따르십시오, 그리고 에러를 마딱드리게 된다면 `이슈를 생성해 주세요. <https://github.com/vyperlang/vyper/issues>`_
 
 .. note::
-   The easiest way to try out the language, experiment with examples, and compile code to ``bytecode``
-   or ``LLL`` is to use the online compiler at https://vyper.online/.
+   언어를 사용해보는 제일 쉬운 방법은, 예제를 통해 배우는 것이고, https://vyper.online/ 에서 온라인 컴파일러로 ``LLL`` 이나 ``bytecode`` 로 코드를 컴파일 해 보는 것입니다.
 
-Prerequisites
+선행 요구 조건
 *************
 
-Installing Python 3.6
+Python 3.6 설치하기
 =====================
 
 Vyper can only be built using Python 3.6 and higher. If you are already running
 Python 3.6, skip to the next section, else follow the instructions here to make
 sure you have the correct Python version installed, and are using that version.
+Vyper는 Python 3.6 혹은 그 이후 버전을 통해서만 빌드 될 수 있습니다. Python 3.6을 사용가능하다면, 다음 세션을 건너 뛰십시오.
+그렇지 않다면, 다음의 설명을 따라 어떤 버전의 Python이 설치 되어있고, 사용하고 있는지 확실히 하십시오.
 
 Ubuntu
 ------
 
-16.04 and older
+16.04 혹은 예전 버전
 ^^^^^^^^^^^^^^^
 
-Start by making sure your packages are up-to-date:
+당신의 팩키지들이 최신 버전이도록 하는 것부터 시작합니다.
 ::
 
     sudo apt-get update
     sudo apt-get -y upgrade
 
-Install Python 3.6 and some necessary packages:
+Python 3.6과 필요한 팩키지들을 설치합니다.
 ::
 
     sudo apt-get install build-essential libssl-dev libffi-dev
@@ -46,40 +44,39 @@ Install Python 3.6 and some necessary packages:
     sudo make
     sudo make install
 
-16.10 and newer
+16.10 혹은 최신 버전
 ^^^^^^^^^^^^^^^
 
-From Ubuntu 16.10 onwards, the Python 3.6 version is in the ``universe``
-repository.
+Python 3.6은 ``universe`` 레포지토리에 포함되어있습니다.
 
-Run the following commands to install:
+다음의 명령어를 넣어 설치를 하십시오.
 ::
 
     sudo apt-get update
     sudo apt-get install python3.6
 
 .. note::
-   If you get the error ``Python.h: No such file or directory`` you need to install the python header files for the Python C API with
+   만약 ``Python.h: No such file or directory`` 과 같은 에러를 얻는다면, 다음의 명령어로 Python C API를 위한 파이썬 헤더 파일을 설치해야합니다.
    ::
 
        sudo apt-get install python3-dev
 
-Using a BASH script
+Bash 스크립트의 사용
 ^^^^^^^^^^^^^^^^^^^
 
-Vyper can be installed using a bash script.
+Vyper는 Bash 스크립트를 통해 설치가 될 수 있습니다.
 
 ::
 
     https://github.com/balajipachai/Scripts/blob/master/install_vyper/install_vyper_ubuntu.sh
 
 
-**Reminder**: Please read and understand the commands in any bash script before executing, especially with ``sudo``.
+**Reminder**: bash 스크립트를 사용하여 무언가를 할 때에는 정확히 그 스크립트가 무엇을 하는지 알아야합니다. 특히, ``sudo`` 를 사용할 때에는요
 
-Arch
+아치
 ----
 
-Using your aur helper of choice (``yay`` in this example).
+(이 예제의 ``yay`` 처럼) 선택한 헬퍼를 사용합니다.
 
 ::
 
@@ -88,14 +85,12 @@ Using your aur helper of choice (``yay`` in this example).
 MacOS
 -----
 
-Make sure you have Homebrew installed. If you don't have the ``brew`` command
-available on the terminal, follow `these instructions <https://docs.brew.sh/Installation.html>`_
-to get Homebrew on your system.
+Homebrew가 설치 되어있는지 확실히 하십시오. ``brew`` 명령어가 터미널에서 실해오디지 않는다면, `이 설명 <https://docs.brew.sh/Installation.html>`_ 을 통해 Homebrew를 설치하십시오.
 
-To install Python 3.6, follow the instructions here:
+Python 3.6을 설치하기 위해서는 다음의 설명을 따르십시오.
 `Installing Python 3 on Mac OS X <https://python-guide.readthedocs.io/en/latest/starting/install3/osx/>`_
 
-Also, ensure the following libraries are installed using ``brew``:
+그리고, ``brew`` 명령어를 통해 다음의 라이브러리가 설치 되도록 하십시오:
 ::
 
     brew install gmp leveldb
@@ -103,47 +98,43 @@ Also, ensure the following libraries are installed using ``brew``:
 Windows
 --------
 
-Windows users can first `install Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ and then follow the instructions for Ubuntu, or `install Docker for Windows <https://docs.docker.com/docker-for-windows/install/>`_ and then follow the instructions for Docker.
+윈도우 유저는 처음에 `install Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`_ 를 진행하시고 Ubuntu에 나온 설명을 그대로 따라하시던지, `install Docker for Windows <https://docs.docker.com/docker-for-windows/install/>`_ 를 따라하신 후 Docker 설치하기를 따라하십시오.
 
 .. note::
-    - Windows Subsystem for Linux is only available for Windows 10.
-    - Windows versions that are < 10 and Windows 10 Home should install the slightly outdated `Docker Toolbox <https://docs.docker.com/toolbox/toolbox_install_windows/>`_, as explained in the link.
+    - Windows Subsystem for Linux (WSL)은 윈도우 10에서만 지원합니다.
+    - 10 미만의 버전을 사용하는 윈도우에서는 약간 오래되었지만, `Docker Toolbox <https://docs.docker.com/toolbox/toolbox_install_windows/>`_ 를 따라서 Docker를 설치하시고 Docker로 설치하기를 따라하십시오.
 
 
-Creating a virtual environment
+가상환경 구축하기
 ==============================
 
-It is **strongly recommended** to install Vyper in **a virtual Python
-environment**, so that new packages installed and dependencies built are
-strictly contained in your Vyper project and will not alter or affect your
-other development environment set-up.
+Vyper를 **가상 Python 환경** 안에 설치하는 것을 **강력하게 권장합니다.** 이를 통하여, 새롭게 설치된 팩키지들이나 빌드 의존성이 Vyper 프로젝트에 포함되게 하고, 다른 개발 환경 설정에 영향을 미치지 못하게 할 수 있습니다.
 
 
-To create a new virtual environment for Vyper run the following commands:
+새로운 가상 환경을 구축하기 위해서는 다음과 같은 명령어를 씁니다.
 ::
 
     sudo apt install virtualenv
     virtualenv -p python3.6 --no-site-packages ~/vyper-venv
     source ~/vyper-venv/bin/activate
 
-To find out more about virtual environments, check out:
+가상 환경에 대해서 좀 더 많은 정보를 얻고 싶다면 다음의 글을 보십시오
 `virtualenv guide <https://virtualenv.pypa.io/en/stable/>`_.
 
 
-You can also create a virtual environment without virtualenv:
+virtualenv 없이 가상환경을 구축 할 수도 있습니다.
 ::
 
    python3.6 -m venv ~/vyper-env
    source ~/vyper-env/bin/activate
 
-Installation
+설치
 ************
 
-Again, it is **strongly recommended to install Vyper** in a **virtual Python environment**.
-This guide assumes you are in a virtual environment containing Python 3.6.
+다시 강조하지만, Vyper를 **가상 Python 환경** 안에 설치하는 것을 **강력하게 권장합니다.**
+이 가이드는 Python 3.6이 설치된 가상환경에서 작업한다고 가정합니다.
 
-Get the latest version of Vyper by cloning the Github repository, and run the
-install and test commands:
+깃헙 레포지토리에서 최신의 Vyper를 받으시고, 명령어와 테스트를 실행시킵니다.
 ::
 
     git clone https://github.com/vyperlang/vyper.git
@@ -152,31 +143,32 @@ install and test commands:
     make dev-deps
     make test
 
-Additionally, you may try to compile an example contract by running:
+추가적으로 다음의 명령어로 테스트 컨트랙트를 컴파일 해 볼 수 있습니다.
 ::
 
     vyper examples/crowdfund.vy
 
-If everything works correctly, you are now able to compile your own smart contracts written in Vyper.
-If any unexpected errors or exceptions are encountered, please feel free to `open an issue <https://github.com/vyperlang/vyper/issues/new>`_.
+모든게 정상적으로 작동된다면, Vyper로 쓰여진 스마트컨트랙트를 컴파일 할 수 있게 되었습니다.
+만약 예상치 못한 에러나 예외가 발생하였다면, `이슈를 열어주세요 <https://github.com/vyperlang/vyper/issues/new>`_.
 
 .. note::
-    If you get the error ``fatal error: openssl/aes.h: No such file or directory`` in the output of ``make``, then run ``sudo apt-get install libssl-dev1``, then run ``make`` again.
+    만약 ``make`` 를 사용했을 떄 ``fatal error: openssl/aes.h: No such file or directory`` 와 같은 에러가 나왔다면, ``sudo apt-get install libssl-dev1`` 를 실행 시킨 뒤 다시 ``make`` 를 실행키십시오.
 
-    **For MacOS users:**
+    **MacOS 유저:**
 
     Apple has deprecated use of OpenSSL in favor of its own TLS and crypto
     libraries. This means that you will need to export some OpenSSL settings
     yourself, before you can install Vyper.
+    애플은 디프리케이트 된 TLS 및 암호화 라이브러리에 대한 OpenSSL을 사용하고 있습니다. 이것은 Vyper를 설치하기 전에 일부 OpenSSL 설정을 익스포트 해야할 필요가 있다는 것입니다.
 
-    Use the following commands:
+    다음의 명령어를 사용하십시오.
     ::
 
         export CFLAGS="-I$(brew --prefix openssl)/include"
         export LDFLAGS="-L$(brew --prefix openssl)/lib"
         pip install scrypt
 
-    Now you can run the install and test commands again:
+    다시 다음의 명령어와 테스트 명령어를 실행하십시오.
     ::
 
         make
