@@ -175,23 +175,23 @@ virtualenv 없이 가상환경을 구축 할 수도 있습니다.
         make dev-deps
         make test
 
-    If you get the error ``ld: library not found for -lyaml`` in the output of `make`, make sure ``libyaml`` is installed using ``brew info libyaml``. If it is installed, add its location to the compile flags as well:
+    만약 ``make`` 를 사용했을 때 ``ld: library not found for -lyaml`` 와 같은 에러가 나왔다면, ``brew info libyaml`` 을 통해 ``libyaml`` 을 설치했는지 확인해보십시오. 만약 설치되었다면 다음의 로케이션 플래그를 설정하여 시도를 하십시오.
     ::
 
         export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix libyaml)/include"
         export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix libyaml)/lib"
 
-    You can then run ``make`` and ``make test`` again.
+     ``make`` 와 ``make test`` 다시 할 수 있을 것입니다.
 
 PIP
 ***
 
-Each tagged version of vyper is also uploaded to `pypi <https://pypi.org/project/vyper/>`_, and can be installed using ``pip``.
+모든 태그가 붙은 Vyper 버전들은 `pypi <https://pypi.org/project/vyper/>`_ 을 통해 얻을 수 있으며, ``pip`` 을 통해 설치 될 수 있습니다.
 ::
 
     pip install vyper
 
-To install a specific version use:
+특정 버전을 설치하기 위해서는 다음과 같이 합니다.
 ::
 
     pip install vyper==0.1.0b2
@@ -202,23 +202,23 @@ Docker
 Dockerhub
 =========
 
-Vyper can be downloaded as docker image from dockerhub:
+Vyper는 dockerhub에서 도커 이미지 형태로 다운로드 가능합니다.
 ::
 
     docker pull vyperlang/vyper
 
-To run the compiler use the `docker run` command:
+`docker run` 커맨드를 이용하여 컴파일러를 실행 시킬 수 있습니다.
 ::
 
     docker run -v $(pwd):/code vyperlang/vyper /code/<contract_file.vy>
 
-Alternatively you can log into the docker image and execute vyper on the prompt.
+또한, 도커 이미지에 로그인한 뒤, 프롬프트에서 Vyper를 실행 시킬 수 있습니다.
 ::
 
     docker run -v $(pwd):/code/ -it --entrypoint /bin/bash vyperlang/vyper
     root@d35252d1fb1b:/code# vyper <contract_file.vy>
 
-The normal paramaters are also supported, for example:
+일반적인 파라미터도 지원됩니다. 다음과 같습니다.
 ::
 
     docker run -v $(pwd):/code vyperlang/vyper -f abi /code/<contract_file.vy>
@@ -227,14 +227,14 @@ The normal paramaters are also supported, for example:
 Dockerfile
 ==========
 
-A Dockerfile is provided in the master branch of the repository. In order to build a Docker Image please run:
+레포지토리의 마스터 브랜치에서 Dockerfile도 제공됩니다. 도커 이미지를 빌드하기 위해서는 다음의 명령어를 실행하십시오.
 ::
 
     docker build https://github.com/vyperlang/vyper.git -t vyper:1
     docker run -it --entrypoint /bin/bash vyper:1
 
-To ensure that everything works correctly after the installtion, please run the test commands
-and try compiling a contract:
+설치 이후에 모든 것들이 정상적으로 작동되는 것을 담보하기 위해서는 테스트 명령어를 실행하십시오.
+그리고 컨트랙트를 컴파일 해 보십시오
 ::
 
     python setup.py test
@@ -243,12 +243,12 @@ and try compiling a contract:
 Snap
 ****
 
-Vyper is published in the snap store. In any of the `supported Linux distros <https://snapcraft.io/docs/installing-snapd>`_, install it with (Note that installing the above snap is the latest master):
+Snap 스토어에 퍼블리싱 되어있습니다. `supported Linux distros <https://snapcraft.io/docs/installing-snapd>`_, 에 적힌 모든 배포판이 지원됩니다. (snap을 통해 설치하면 최신 master에서 가져옵니다.):
 ::
 
     sudo snap install vyper --edge --devmode
 
-To install the latest beta version use:
+베타 버전을 다운받고 싶다면 다음 명령어를 쓰십시오
 
 ::
 
