@@ -2,15 +2,15 @@
 
 .. _types:
 
-Constants and Environment Variables
+상수와 환경변수들
 ***********************************
 
 .. _types-constants:
 
-Built In Constants
+내장된 상수들
 ==================
 
-Vyper has a few convenience constants builtin.
+Vpyer는 편의를 위한 내장된 상수들이 있습니다.
 
 ================= ================ ==============================================
 Name              Type             Value
@@ -25,12 +25,12 @@ Name              Type             Value
 ``ZERO_WEI``      ``uint256(wei)`` ``0``
 ================= ================ ==============================================
 
-Custom Constants
+커스텀한 상수
 ================
 
-Custom constants can be defined at a global level in Vyper. To define a constant make use of the ``constant`` keyword.
+커스텀한 상수들은 Vyper에서 전역 수준으로 정의될 수 있습니다. ``constant`` 키워드를 이용하여 정의할 수 있습니다.
 
-**Example:**
+**예시:**
 ::
 
   TOTAL_SUPPLY: constant(uint256) = 10000000
@@ -40,7 +40,7 @@ Custom constants can be defined at a global level in Vyper. To define a constant
   def __init__():
       self.total_supply = TOTAL_SUPPLY
 
-**Advanced Example:**
+**어려운 예시:**
 ::
 
   units: {
@@ -56,25 +56,25 @@ Custom constants can be defined at a global level in Vyper. To define a constant
 
 .. _types-env-vars:
 
-Environment Variables
+환경 변수
 =====================
 
-Environment variables always exist in the namespace and are used to provide information about the blockchain or current transaction.
+환경 변수는 네임스페이스 속에 언제나 존재하며, 블록체인이나 현재 트랜젝션에 대한 정보를 제공할 때 사용되어집니다.
 
 .. note::
 
-    ``msg.sender`` and ``msg.value`` can only be accessed from public functions. If you require these values within a private function they must be passed as parameters.
+    ``msg.sender`` 와 ``msg.value`` 는 퍼블릭 함수만 접근 가능하빈다. 프라이빗 함수에서 사용을 하려면 파라미터로 전송하셔야만 합니다.
 
 ==================== ================ =============================================
 Name                 Type             Value
 ==================== ================ =============================================
-``block.coinbase``   ``address``      Current block miner’s address
-``block.difficulty`` ``uint256``      Current block difficulty
-``block.number``     ``uint256``      Current block number
-``block.prevhash``   ``bytes32``      Equivalent to ``blockhash(block.number - 1)``
-``block.timestamp``  ``uint256``      Current block epoch timestamp
-``msg.gas``          ``uint256``      Remaining gas
-``msg.sender``       ``address``      Sender of the message (current call)
-``msg.value``        ``uint256(wei)`` Number of wei sent with the message
-``tx.origin``        ``address``      Sender of the transaction (full call chain)
+``block.coinbase``   ``address``      현 블록 채굴자의 주소
+``block.difficulty`` ``uint256``      현 블록의 난이도
+``block.number``     ``uint256``      현 블록의 번호
+``block.prevhash``   ``bytes32``      ``blockhash(block.number - 1)`` 와 동일
+``block.timestamp``  ``uint256``      현 블록의 epoch timestamp
+``msg.gas``          ``uint256``      남은 가스
+``msg.sender``       ``address``      메세지 전송자 (현 호출)
+``msg.value``        ``uint256(wei)`` 메세지로 전송된 Wei의 량
+``tx.origin``        ``address``      트랜잭션의 전송자 (체인 내 전체)
 ==================== ================ =============================================
